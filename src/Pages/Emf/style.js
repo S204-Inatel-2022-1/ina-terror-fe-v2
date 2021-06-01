@@ -52,15 +52,15 @@ export const Button = styled.button`
 
   margin-top: 150px;
 
-  background-color: #5f5f5f;
+  background-color: ${(props) => (props.play ? "#555555" : "#5f5f5f")};
 
   color: white;
-  background: linear-gradient(0deg, #5f5f5f, #5f5f5f), #c4c4c4;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  box-shadow: ${(props) =>
+    props.play ? "none" : "0px 4px 4px rgba(0, 0, 0, 0.25)"};
 
   &:active {
     box-shadow: none;
-    background-color: #484848;
   }
 `;
 
@@ -84,4 +84,9 @@ export const DecorationRight = styled.div`
   bottom: 0;
 
   background: linear-gradient(to right bottom, #484848 50%, #5f5f5f 50%);
+`;
+
+export const Alert = styled.h1`
+  font-size: 70px;
+  color: ${(props) => props.fiveAlert ? "#FB4C30" : "#4B4B4B"} ;
 `;

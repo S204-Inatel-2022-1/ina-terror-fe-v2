@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import calcLeds, {randomNumber} from "../../utils/leds";
+import calcLeds, { randomNumber, sleep } from "../../utils/leds";
 import {
   Wrapper,
   LedGreen,
@@ -11,6 +11,7 @@ import {
   Leds,
   DecorationRight,
   DecorationLeft,
+  Alert
 } from "./style";
 
 export default function Emf() {
@@ -22,7 +23,7 @@ export default function Emf() {
       if (play) {
         setLeds(calcLeds);
       }
-    }, randomNumber(2000));
+    }, 1000);
     return () => clearInterval(timer);
   }, [play]);
 
@@ -40,8 +41,11 @@ export default function Emf() {
         <LedSalmon className="led" ledOn={leds[3]} />
         <LedRed className="led" ledOn={leds[4]} />
       </Leds>
+      <Alert fiveAlert={leds[4]}>RUN</Alert>
 
-      <Button onClick={() => runEmf()}>PRESS</Button>
+      <Button play={play} onClick={() => runEmf()}>
+        PRESS
+      </Button>
 
       <DecorationRight />
       <DecorationLeft />

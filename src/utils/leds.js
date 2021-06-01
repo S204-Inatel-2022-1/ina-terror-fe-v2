@@ -3,6 +3,11 @@ export function randomNumber(num) {
     return diceResult;
 }
 
+export function sleep(ms) {
+    console.log("to aqui")
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
 export default function calcLeds() {
     const num = randomNumber(20);
 
@@ -16,6 +21,9 @@ export default function calcLeds() {
     console.log(num);
 
     switch( num ) {
+        case 15 :
+            return ledGreen;
+            break;
         case 16 :
             return ledGreen;
             break;
