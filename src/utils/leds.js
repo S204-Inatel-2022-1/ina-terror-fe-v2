@@ -23,22 +23,22 @@ export default function calcLeds() {
     switch( num ) {
         case 15 :
             return ledGreen;
-            break;
+            // break;
         case 16 :
             return ledGreen;
-            break;
+            // break;
         case 17 :
             return ledGreenYelow;
-            break;
+            // break;
         case 18 :
             return ledYellow;
-            break;
+            // break;
         case 19 :
             return ledSalmon;
-            break;
+            // break;
         case 20 :
             return ledRed;
-            break;
+            // break;
         default :
             return noLed;
     }

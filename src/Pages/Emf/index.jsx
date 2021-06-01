@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import calcLeds, { randomNumber, sleep } from "../../utils/leds";
+import calcLeds from "../../utils/leds";
 import {
   Wrapper,
   LedGreen,
