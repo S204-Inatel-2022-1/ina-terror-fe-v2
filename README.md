@@ -17,13 +17,13 @@ https://nodejs.org/en/
 
 2. After you cloned the git repository, you need to install dependencies with **npm**. 
 
-```bash
+* ```bash
   #Write this on your terminal
   npm install
-```
+  ```
 
 3. finally lets run the APP
 
-```bash
+* ```bash
   npm start
-```
+  ```
