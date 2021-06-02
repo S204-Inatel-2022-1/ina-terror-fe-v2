@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import "./style.css"
-import Emf from "./Pages/Emf"
+import App from "./App"
+
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <Emf />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
