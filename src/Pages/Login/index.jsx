@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Form from "../../Components/Form";
+import { useHistory } from "react-router-dom"
 
 export default function Login() {
+  const history = useHistory();
   function createAccount(name, password) {
     console.log(name, password)
     axios
@@ -34,14 +36,19 @@ export default function Login() {
       console.log("rodou aqui")
   }
 
+  function handleLogin() {
+    history.push("/menu")
+  }
+
   return (
     <Form
       title="Login"
       nameLabel="Name"
       passLabel="Password"
-      buttonLabel=" Login "
-      buttonLabel2="Sign Up"
+      buttonLabel="Criar conta"
+      buttonLabel2="Entrar"
       createAccount={createAccount}
+      handleLogin={handleLogin}
     />
   );
 }
