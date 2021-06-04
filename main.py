@@ -48,7 +48,7 @@ def put_info(user: str, password: str):
     raise HTTPException(404, f" {user}not found")
 
 
-@app.get("/api/info/{user}/{password}", response_model=Info)
+@app.get("/api/info/{user}", response_model=Info)
 def get_info_by_title(user,password):
     response =  fetch_one(user,password)
     if response:
