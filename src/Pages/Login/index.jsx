@@ -1,72 +1,47 @@
-import React from "react";
-import Emf from "../Emf";
-import { Wrapper, Note } from "./style";
-import img from "../../assets/note.png";
-import logo from "../../assets/logo.png";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useRouteMatch,
-  useParams,
-} from "react-router-dom";
+import React, { useState } from "react";
+import axios from "axios";
+import Form from "../../Components/Form";
 
-export default class Login extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { name: "", password: "" };
-
-    this.handleNameChange = this.handleNameChange.bind(this);
-    this.handlePassChange = this.handlePassChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+export default function Login() {
+  function createAccount(name, password) {
+    console.log(name, password)
+    axios
+      .post("http://127.0.0.1:8000/api/info/", {
+        user: name,
+        password: password,
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+      console.log("rodou aqui")
   }
 
-  handleNameChange(event) {
-    this.setState({ name: event.target.value });
+  function createAccount(name, password) {
+    axios
+      .post("http://127.0.0.1:8000/api/info/", {
+        user: name,
+        password: password,
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+      console.log("rodou aqui")
   }
 
-  handlePassChange(event) {
-    this.setState({ password: event.target.value });
-  }
-
-  handleSubmit(event) {
-    alert(
-      "Um nome foi enviado: " +
-        this.state.name +
-        "\nUma senha foi enviado: " +
-        this.state.password
-    );
-    event.preventDefault();
-  }
-
-  render() {
-    return (
-      <Wrapper>
-        <img src={logo} alt="" />
-        <Note>
-          <form onSubmit={this.handleSubmit}>
-            <label>
-              Nome:
-              <input
-                type="text"
-                value={this.state.name}
-                onChange={this.handleNameChange}
-              />
-            </label>
-            <label>
-              Senha:
-              <input
-                type="password"
-                value={this.state.password}
-                onChange={this.handlePassChange}
-              />
-            </label>
-
-            <input type="submit" value="Enviar" />
-          </form>
-        </Note>
-      </Wrapper>
-    );
-  }
+  return (
+    <Form
+      title="Login"
+      nameLabel="Name"
+      passLabel="Password"
+      buttonLabel=" Login "
+      buttonLabel2="Sign Up"
+      createAccount={createAccount}
+    />
+  );
 }
