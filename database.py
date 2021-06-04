@@ -37,3 +37,4 @@ def fetch_one(user,password):
 def remove(user):
   Users.delete_one({"user": user})
   return True
+
