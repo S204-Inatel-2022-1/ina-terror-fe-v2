@@ -28,7 +28,7 @@ export const Leds = styled.div`
 export const LedGreen = styled.div`
   background-color: ${(props) => (props.ledOn ? "#B8FE7F" : "#517137")};
 `;
-export const LedGreenYelow = styled.div`
+export const LedGreenYellow = styled.div`
   background-color: ${(props) => (props.ledOn ? "#C6FF97" : "#65814f")};
 `;
 export const LedYellow = styled.div`
@@ -88,5 +88,5 @@ export const DecorationRight = styled.div`
 
 export const Alert = styled.h1`
   font-size: 70px;
-  color: ${(props) => props.fiveAlert ? "#FB4C30" : "#4B4B4B"} ;
+  color: ${(props) => (props.fiveAlert ? "#FB4C30" : "transparent")};
 `;

@@ -6,7 +6,7 @@ import {
   LedYellow,
   LedSalmon,
   LedRed,
-  LedGreenYelow,
+  LedGreenYellow,
   Button,
   Leds,
   DecorationRight,
@@ -36,7 +36,7 @@ export default function Emf() {
     <Wrapper>
       <Leds>
         <LedGreen className="led" ledOn={leds[0]} />
-        <LedGreenYelow className="led" ledOn={leds[1]} />
+        <LedGreenYellow className="led" ledOn={leds[1]} />
         <LedYellow className="led" ledOn={leds[2]} />
         <LedSalmon className="led" ledOn={leds[3]} />
         <LedRed className="led" ledOn={leds[4]} />

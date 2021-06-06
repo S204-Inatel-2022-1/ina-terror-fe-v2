@@ -2,21 +2,21 @@ import styled from "styled-components";
 import img from "../../assets/note4.png";
 
 const font = "font-family: 'IBM Plex Mono', monospace;";
-const myRed1 = "#9C0024"
-
+let myRed1 = "#9C0025";
 
 export const Wrapper = styled.div`
+  
   width: 100vw;
-  height: 200vh;
+  height: 100vh;
 
-
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   background-color: #484848;
 
-  ${font}
+  font-family: ${font};
   font-size: 1.5rem;
   color: ${myRed1};
 
@@ -30,7 +30,6 @@ export const Wrapper = styled.div`
   button {
     background: transparent;
     color: ${myRed1};
-    ${font}
     font-weight: 500;
     font-size: 1rem;
     border: 0 none;
@@ -38,6 +37,9 @@ export const Wrapper = styled.div`
     box-shadow: none;
     margin: 10px;
     font-size: 1.5rem;
+  }
+  input {
+    max-width: 80vw;
   }
 
   input[type="submit"] {
@@ -62,11 +64,6 @@ export const Wrapper = styled.div`
     flex-direction: column;
   }
 
-  img {
-    margin-top: 5vh;
-    max-width: 90vw;
-  }
-
   p {
     font-family: "Rock Salt", cursive;
 
@@ -74,22 +71,21 @@ export const Wrapper = styled.div`
     text-align: center;
     max-width: 90vw;
   }
+  
 `;
 
 export const Note = styled.div`
   width: 190vw;
-  height: 160vw;
+  height: 180vw;
 
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  position: relative;
+  flex-direction: column;
 
   background-image: url(${img});
-  background-repeat: no-repeat;
-  background-size: 190vw 160vw;
+  background-repeat: repeat;
+  background-size: 190vw 180vw;
 `;
 
 export const NoteMenu = styled.section`

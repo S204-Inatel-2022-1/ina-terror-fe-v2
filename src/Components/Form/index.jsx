@@ -24,18 +24,14 @@ export default class Login extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
 
-    if (this.state.name && this.state.password) { //Evitar contas com Strings vazias
-      alert(
-        "Pronto " + this.state.name + " conta criada."
-      );
+    if (this.state.name && this.state.password) {
+      //Evitar contas com Strings vazias
+      alert("Pronto " + this.state.name + " conta criada.");
       this.props.createAccount(this.state.name, this.state.password);
     } else {
-      alert(
-        "Erro,o campo de nome ou senha estão vazios"
-      )
+      alert("Erro,o campo de nome ou senha estão vazios");
     }
   }
-
 
   render() {
     return (
@@ -67,7 +63,9 @@ export default class Login extends React.Component {
 
               <input type="submit" value={this.props.buttonLabel} />
             </form>
-            <button onClick={this.props.handleLogin}>{this.props.buttonLabel2}</button>
+            <button onClick={() => this.props.handleLogin(this.state.name, this.state.password)}>
+              {this.props.buttonLabel2}
+            </button>
           </NoteMenu>
         </Note>
       </Wrapper>

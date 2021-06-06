@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Form from "../../Components/Form";
-import { useHistory } from "react-router-dom"
+import { useHistory } from "react-router-dom";
 
 export default function Login() {
   const history = useHistory();
+
   function createAccount(name, password) {
-    console.log(name, password)
+    console.log(name, password);
     axios
-      .post("http://127.0.0.1:8000/api/info/", {
+      .post("http://localhost:8000/api/info/", {
         user: name,
         password: password,
       })
@@ -18,26 +19,28 @@ export default function Login() {
       .catch(function (error) {
         console.log(error);
       });
-      console.log("rodou aqui")
+    console.log("rodou aqui");
   }
 
-  function createAccount(name, password) {
+  
+
+  function handleLogin(name, password) {
     axios
-      .post("http://127.0.0.1:8000/api/info/", {
-        user: name,
-        password: password,
-      })
+      .get(`http://localhost:8000/api/info/${name}?password=${password}`)
       .then(function (response) {
-        console.log(response);
+        const info = response.data;
+        
+        console.log(info);
+        if (info.user == name) {
+          console.log("true");
+          history.push("/menu")
+          
+        }
       })
       .catch(function (error) {
         console.log(error);
-      });
-      console.log("rodou aqui")
-  }
-
-  function handleLogin() {
-    history.push("/menu")
+        alert(error);
+      })
   }
 
   return (
