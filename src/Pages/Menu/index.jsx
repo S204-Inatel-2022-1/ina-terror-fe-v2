@@ -15,7 +15,7 @@ export default function Emf() {
           Infernal Dictionary
         </button>
 
-        <button onClick={() => history.push("/menu/article")}>
+        <button onClick={() => history.push("/menu/sightings")}>
           Ghost Sightings
         </button>
 

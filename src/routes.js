@@ -5,6 +5,7 @@ import Emf from "./Pages/Emf"
 import Menu from "./Pages/Menu"
 import Article from "./Pages/Article"
 import Account from "./Pages/Account"
+import Sightings from "./Pages/Sightings" 
 
 const rootElement = document.getElementById("root");
 export default function () {
@@ -16,6 +17,7 @@ export default function () {
         <Route exact path="/menu/emf" component={Emf} />
         <Route exact path="/menu/article" component={Article} />
         <Route exact path="/menu/account" component={Account} />
+        <Route exact path="/menu/sightings" component={Sightings} />
       </Switch>
     </BrowserRouter>
   );
