@@ -29,7 +29,7 @@ This project is a ghost radar for a college subject.
  npm start
 ```
 
-## User Interface
+## User Interface 🎨
 
 
 <p align="center">
