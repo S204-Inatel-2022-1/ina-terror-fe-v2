@@ -10,6 +10,7 @@ export const Container = styled.div`
 export const Wrapper = styled.div`
   padding-left: 20px;
   width: 80vw;
+  min-width: 300px;
 
   color: #ba0003;
 
