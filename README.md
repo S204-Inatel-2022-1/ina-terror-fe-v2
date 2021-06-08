@@ -9,6 +9,7 @@ This project is a ghost radar for a college subject.
 - ReactJS
 - Python
 - mongoDB
+- PWA
 
 ## Getting Started 🏁
 
