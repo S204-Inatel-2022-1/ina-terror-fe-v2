@@ -27,3 +27,7 @@ This project is a ghost radar for a college subject.
 ```bash
  npm start
 ```
+
+## User Interface
+
+<img src="./readme/img1.png"/>
