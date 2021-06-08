@@ -4,124 +4,124 @@ import { useHistory } from "react-router-dom";
 import { Wrapper, Container } from "./style";
 
 const input = `
-# bio353's Pokédex (WIP)
+# Ghosts
 
-### Projeto de Banco de Dados II
 
-This Pokédex is being created as the final project for a specific subject at my college. I'm planning to also use it, however, alongside my **custom ruleset** for [Pokerole RPG](https://www.pokeroleproject.com/).
+## Banshee
+"A Banshee is a natural hunter and will attack anything. It has been known to stalk its prey one at a time until making its kill.
 
-### What this project aims to do?
+Unique Strengths: A Banshee will only target one person at a time.
 
-This will be a database containing information about all Pokémon, its moves and abilities, held items and pretty much everything you need to know to play like a true gamer.
+Weaknesses: Banshees fear the Crucifix and will be less aggressive when near one.
 
-Later on, I will create an entire new database exclusively for my ruleset and maybe a dice roller.
+Evidence: EMF Level 5, Fingerprints, Freezing Temperatures"
 
-### Let's get started!
+## Demon
+"A Demon is one of the worst Ghosts you can encounter. It has been known to attack without a reason.
 
-> "Are you a boy? Or are you a girl?" - Prof. Oak
-Sample text.
+Unique Strengths: Demons will attack more often than any other Ghost.
 
-###  What technologies will be used?
+Weaknesses: Asking a Demon successful questions on the Ouija Board won't lower the user's sanity.
 
-  * [MongoDB](https://www.mongodb.com/)
-  * [Python](https://www.python.org/)
+Evidence: Freezing Temperatures, Ghost Writing, Spirit Box"
 
-### My special thanks to...
+## Jinn
+"A Jinn is a territorial ghost that will attack when threatened. It has also been known to be able to travel at significant speed.
 
-  * [PokéAPI](https://pokeapi.co/)
-  * [Pokerole Project](https://www.pokeroleproject.com/)
-  * reserved
-  * reserved
-  * 
-# bio353's Pokédex (WIP)
+Unique Strengths: A Jinn will travel at a faster speed if its victim is far away.
 
-### Projeto de Banco de Dados II
+Weaknesses: Turning off the locations power source will prevent the Jinn from using its ability.
 
-This Pokédex is being created as the final project for a specific subject at my college. I'm planning to also use it, however, alongside my **custom ruleset** for [Pokerole RPG](https://www.pokeroleproject.com/).
+Evidence: EMF Level 5, Ghost Orb, Spirit Box"
 
-### What this project aims to do?
+## Mare
+"A Mare is the source of all nightmares, making it most powerful in the dark.
 
-This will be a database containing information about all Pokémon, its moves and abilities, held items and pretty much everything you need to know to play like a true gamer.
+Unique Strengths: A Mare will have an increased chance to attack in the dark.
 
-Later on, I will create an entire new database exclusively for my ruleset and maybe a dice roller.
+Weaknesses: Turning the lights on around the Mare will lower its chance to attack.
 
-### Let's get started!
+Evidence: Freezing Temperatures, Ghost Orb, Spirit Box"
 
-> "Are you a boy? Or are you a girl?" - Prof. Oak
-Sample text.
+## Oni
+"Oni's are a cousin to the Demon and possess extreme strength. There have been rumours that they become more active around their prey.
 
-###  What technologies will be used?
+Unique Strengths: Oni's are more active when people are nearby and have been seen moving objects at great speed.
 
-  * [MongoDB](https://www.mongodb.com/)
-  * [Python](https://www.python.org/)
+Weaknesses: Being more active make the Oni easier to find and identify
 
-### My special thanks to...
-
-  * [PokéAPI](https://pokeapi.co/)
-  * [Pokerole Project](https://www.pokeroleproject.com/)
-  * reserved
-  * reserved
-
-# bio353's Pokédex (WIP)
-
-### Projeto de Banco de Dados II
-
-This Pokédex is being created as the final project for a specific subject at my college. I'm planning to also use it, however, alongside my **custom ruleset** for [Pokerole RPG](https://www.pokeroleproject.com/).
-
-### What this project aims to do?
-
-This will be a database containing information about all Pokémon, its moves and abilities, held items and pretty much everything you need to know to play like a true gamer.
-
-Later on, I will create an entire new database exclusively for my ruleset and maybe a dice roller.
-
-### Let's get started!
-
-> "Are you a boy? Or are you a girl?" - Prof. Oak
-Sample text.
-
-###  What technologies will be used?
-
-  * [MongoDB](https://www.mongodb.com/)
-  * [Python](https://www.python.org/)
-
-### My special thanks to...
-
-  * [PokéAPI](https://pokeapi.co/)
-  * [Pokerole Project](https://www.pokeroleproject.com/)
-  * reserved
-  * reserved
-
-# bio353's Pokédex (WIP)
-
-### Projeto de Banco de Dados II
-
-This Pokédex is being created as the final project for a specific subject at my college. I'm planning to also use it, however, alongside my **custom ruleset** for [Pokerole RPG](https://www.pokeroleproject.com/).
-
-### What this project aims to do?
-
-This will be a database containing information about all Pokémon, its moves and abilities, held items and pretty much everything you need to know to play like a true gamer.
-
-Later on, I will create an entire new database exclusively for my ruleset and maybe a dice roller.
-
-### Let's get started!
-
-> "Are you a boy? Or are you a girl?" - Prof. Oak
-Sample text.
-
-###  What technologies will be used?
-
-  * [MongoDB](https://www.mongodb.com/)
-  * [Python](https://www.python.org/)
-
-### My special thanks to...
-
-  * [PokéAPI](https://pokeapi.co/)
-  * [Pokerole Project](https://www.pokeroleproject.com/)
-  * reserved
-  * reserved
+Evidence: EMF Level 5, Ghost Writing, Spirit Box"
 
 
 
+## Phantom
+"A Phantom is a ghost that can possess the living, most commonly summoned by a Ouija Board. It also induces fear into those around it.
+
+Unique Strengths: Looking at a Phantom will considerably drop your sanity.
+
+Weaknesses: Taking a photo of the Phantom will make it temporarily disappear.
+
+Evidence: EMF Level 5, Freezing Temperatures, Ghost Orb"
+
+
+## Poltergeist
+"One of the most famous Ghosts, a Poltergeist, also known as a noisy ghost can manipulate objects around it to spread fear into its victims.
+
+Unique Strengths: A Poltergeist can throw huge amounts of objects at once.
+
+Weaknesses: A Poltergeist is almost ineffective in an empty room.
+
+Evidence: Fingerprints, Ghost Orb, Spirit Box"
+
+
+## Revenant
+"A Revenant is a slow but violent ghost that will attack indiscriminately. It has been rumoured to travel at a significantly high speed when hunting.
+
+Unique Strengths: A Revenant will travel at a significantly faster speed when hunting a victim.
+
+Weaknesses: Hiding from the Revenant will cause it to move very slowly.
+
+Evidence: EMF Level 5, Fingerprints, Ghost Writing"
+
+
+## Shade
+"A Shade is known to be a Shy Ghost. There is evidence that a Shade will stop all paranormal activity if there are multiple people nearby.
+
+Unique Strengths: Being shy means the Ghost will be harder to find.
+
+Weaknesses: The Ghost will not enter hunting mode if there is multiple people nearby.
+
+Evidence: EMF Level 5, Ghost Orb, Ghost Writing"
+
+
+## Spirit
+"A Spirit is the most common Ghost you will come across however it is still very powerful and dangerous. They are usually discovered at one of their hunting grounds after an unexplained death.
+
+Unique Strengths: Nothing
+
+Weaknesses: Using Smudge Sticks on a spirit will stop it attacking for a long period of time.
+
+Evidence: Fingerprints, Ghost Writing, Spirit Box"
+
+
+## Wraith
+"A wraith is one of the most dangerous ghosts you will find. It is also the only known Ghost that has the ability of flight and has sometimes been known to travel through walls.
+
+Unique Strengths: Wraiths almost never touch the ground meaning it can't be tracked by footsteps.
+
+Weaknesses: Wraiths have a toxic reaction to Salt.
+
+Evidence: Fingerprints, Freezing Temperatures, Spirit Box"
+
+
+## Yurei
+"A Yurei is a Ghost that has returned to the physical world, usually for the purpose of revenge or hatred.
+
+Unique Strengths: Yurei's have been known to have a stronger effect on people sanity.
+
+Weaknesses: Smudging the Yurei's room will cause it to not wander around the location for a long time.
+
+Evidence: Freezing Temperatures, Ghost Orb, Ghost Writing"
 `;
 
 export default function Article() {

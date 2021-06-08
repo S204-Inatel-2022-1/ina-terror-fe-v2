@@ -30,7 +30,6 @@ export const Wrapper = styled.div`
   button {
     background: transparent;
     color: ${myRed1};
-    ${font}
     font-weight: 500;
     font-size: 1rem;
     border: 0 none;
@@ -38,6 +37,11 @@ export const Wrapper = styled.div`
     box-shadow: none;
     margin: 10px;
     font-size: 1.5rem;
+  }
+
+  input {
+    width: 70vw;
+    max-width: 300px;
   }
 
   input[type="submit"] {
@@ -54,12 +58,15 @@ export const Wrapper = styled.div`
 
   input[type="submit"],
   button {
-    min-width: 50vw;
+    width: 12rem;
   }
 
   label {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
   }
 
   img {

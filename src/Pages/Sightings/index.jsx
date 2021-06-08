@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { Wrapper, Container } from "./style";
 
@@ -12,7 +13,7 @@ const mock = [
   { id: 7, lat: "-64.7418", lon: "46.0406", time: "12:00" },
 ];
 
-function ListSightings({props}) {
+function ListSightings({ props }) {
   return (
     <>
       <h1>Sighting {props.id}</h1>
@@ -23,11 +24,32 @@ function ListSightings({props}) {
   );
 }
 
+
+
 export default function Sightings() {
+  const [info, setInfo] = useState([]);
+
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8000/api/ginfo`)
+      .then(function (response) {
+        setInfo(response.data)
+        console.log(info);
+        
+      })
+      .catch(function (error) {
+        console.log(error);
+        alert(error);
+      })
+  }, []);
+
   return (
     <Container>
       <Wrapper>
-        {mock.map((event) => <ListSightings props={event} />)}
+        {info.map((event) => (
+          <ListSightings props={event} />
+        ))}
       </Wrapper>
     </Container>
   );

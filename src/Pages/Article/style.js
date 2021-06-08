@@ -2,21 +2,16 @@ import styled from "styled-components";
 import img from "../../assets/note4.png";
 
 export const Container = styled.div`
-
   background-image: url(${img});
-      background-position: center -200px;
-      background-attachment: fixed;
+  background-position: center -200px;
+  background-attachment: fixed;
 `;
 
 export const Wrapper = styled.div`
   padding-left: 20px;
   width: 80vw;
 
-  color: #BA0003;
-
-  
-
-
+  color: #ba0003;
 
   html {
     -webkit-print-color-adjust: exact;
@@ -36,16 +31,12 @@ export const Wrapper = styled.div`
       padding: 2em auto;
       max-width: 900px;
       color: rgb(55, 53, 47);
-
-   
     }
   }
 
   body {
     line-height: 1.5;
     white-space: pre-wrap;
-
-    
   }
 
   a,
@@ -483,8 +474,8 @@ export const Wrapper = styled.div`
   }
 
   * {
-    font-family:   'IBM Plex Mono',-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
-      "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji",
+    font-family: "IBM Plex Mono", -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji",
       "Segoe UI Symbol";
   }
   code {
