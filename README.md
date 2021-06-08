@@ -30,4 +30,9 @@ This project is a ghost radar for a college subject.
 
 ## User Interface
 
-<img src="./readme/img1.png"/>
+
+<p align="center">
+   <img  width="300" src="./readme/img1.png" alt="...">
+   <img  width="300" src="./readme/img2.png" alt="...">
+   <img  width="300" src="./readme/img3.png" alt="...">
+</p>
