@@ -1,74 +1,69 @@
-import React from "react";
+import React, { useState } from "react";
 import { Wrapper, Note, NoteMenu } from "./style";
 import img from "../../assets/note.png";
 import logo from "../../assets/logo.png";
+import { useHistory } from 'react-router-dom';
 
-export default class Login extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { name: "", password: "" };
+export default function Form(props) {
+  //   constructor(props) {
+  //     super(props);
+  //     this.state = { name: "", password: "" };
 
-    this.handleNameChange = this.handleNameChange.bind(this);
-    this.handlePassChange = this.handlePassChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+  //     this.handleNameChange = this.handleNameChange.bind(this);
+  //     this.handlePassChange = this.handlePassChange.bind(this);
+  //     this.handleSubmit = this.handleSubmit.bind(this);
+  //   }
+
+  const [name, setName] = useState();
+  const [pass, setPass] = useState();
+  
+
+  function handleNameChange(event) {
+    setName( event.target.value );
   }
 
-  handleNameChange(event) {
-    this.setState({ name: event.target.value });
+  function handlePassChange(event) {
+    setPass(event.target.value );
   }
 
-  handlePassChange(event) {
-    this.setState({ password: event.target.value });
-  }
-
-  handleSubmit(event) {
+  function handleSubmit(event) {
     event.preventDefault();
 
-    if (this.state.name && this.state.password) {
+    if (name && pass) {
       //Evitar contas com Strings vazias
-      alert("Pronto " + this.state.name + " conta criada.");
-      this.props.createAccount(this.state.name, this.state.password);
+      alert("Pronto " + name + pass +" conta criada.");
+      props.createAccount(name, pass);
     } else {
       alert("Erro,o campo de nome ou senha estão vazios");
     }
   }
 
-  render() {
-    return (
-      <Wrapper>
-        <img src={logo} alt="" />
-        <Note>
-          <NoteMenu>
-            <p>
-              <strong>{this.props.title}</strong>
-            </p>
+  return (
+    <Wrapper>
+      <img src={logo} alt="" />
+      <Note>
+        <NoteMenu>
+          <p>
+            <strong>{props.title}</strong>
+          </p>
 
-            <form onSubmit={this.handleSubmit}>
-              <label>
-                {this.props.nameLabel}:
-                <input
-                  type="text"
-                  value={this.state.name}
-                  onChange={this.handleNameChange}
-                />
-              </label>
-              <label>
-                {this.props.passLabel}:
-                <input
-                  type="password"
-                  value={this.state.password}
-                  onChange={this.handlePassChange}
-                />
-              </label>
+          <form onSubmit={handleSubmit}>
+            <label>
+              {props.nameLabel}:
+              <input type="text" value={name} onChange={handleNameChange} />
+            </label>
+            <label>
+              {props.passLabel}:
+              <input type="password" value={pass} onChange={handlePassChange} />
+            </label>
 
-              <input type="submit" value={this.props.buttonLabel} />
-            </form>
-            <button onClick={() => this.props.handleLogin(this.state.name, this.state.password)}>
-              {this.props.buttonLabel2}
-            </button>
-          </NoteMenu>
-        </Note>
-      </Wrapper>
-    );
-  }
+            <input type="submit" value={props.buttonLabel} />
+          </form>
+          <button onClick={() => props.handleLogin(name, pass, props.history)}>
+            {props.buttonLabel2}
+          </button>
+        </NoteMenu>
+      </Note>
+    </Wrapper>
+  );
 }

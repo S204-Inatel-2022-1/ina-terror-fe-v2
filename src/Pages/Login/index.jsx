@@ -2,47 +2,11 @@ import React, { useState } from "react";
 import axios from "axios";
 import Form from "../../Components/Form";
 import { useHistory } from "react-router-dom";
+import { createAccount } from "./../../api/api";
+import { handleLogin } from "./../../api/api";
 
 export default function Login() {
   const history = useHistory();
-
-  function createAccount(name, password) {
-    console.log(name, password);
-    axios
-      .post("http://localhost:8000/api/info/", {
-        user: name,
-        password: password,
-      })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-    console.log("rodou aqui");
-  }
-
-  
-
-  function handleLogin(name, password) {
-    axios
-      .get(`http://localhost:8000/api/info/${name}?password=${password}`)
-      .then(function (response) {
-        const info = response.data;
-        
-        console.log(info);
-        if (info.user == name) {
-          console.log("true");
-          history.push("/menu")
-          
-        }
-      })
-      .catch(function (error) {
-        console.log(error);
-        alert(error);
-      })
-  }
-
   return (
     <Form
       title="Login"
@@ -52,6 +16,7 @@ export default function Login() {
       buttonLabel2="Entrar"
       createAccount={createAccount}
       handleLogin={handleLogin}
+      history={history}
     />
   );
 }
