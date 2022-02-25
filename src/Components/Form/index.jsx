@@ -5,15 +5,6 @@ import logo from "../../assets/logo.png";
 import { useHistory } from 'react-router-dom';
 
 export default function Form(props) {
-  //   constructor(props) {
-  //     super(props);
-  //     this.state = { name: "", password: "" };
-
-  //     this.handleNameChange = this.handleNameChange.bind(this);
-  //     this.handlePassChange = this.handlePassChange.bind(this);
-  //     this.handleSubmit = this.handleSubmit.bind(this);
-  //   }
-
   const [name, setName] = useState();
   const [pass, setPass] = useState();
   

@@ -1,17 +1,6 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { useHistory } from "react-router-dom";
 import { Wrapper, Container } from "./style";
-
-const mock = [
-  { id: 1, lat: "-64.7418", lon: "46.0406", time: "12:00" },
-  { id: 2, lat: "-64.7418", lon: "46.0406", time: "12:00" },
-  { id: 3, lat: "-64.7418", lon: "46.0406", time: "12:00" },
-  { id: 4, lat: "-64.7418", lon: "46.0406", time: "12:00" },
-  { id: 5, lat: "-64.7418", lon: "46.0406", time: "12:00" },
-  { id: 6, lat: "-64.7418", lon: "46.0406", time: "12:00" },
-  { id: 7, lat: "-64.7418", lon: "46.0406", time: "12:00" },
-];
+import { handleGetSightings } from "../../api/api";
 
 function ListSightings({ props }) {
   return (
@@ -24,24 +13,12 @@ function ListSightings({ props }) {
   );
 }
 
-
-
 export default function Sightings() {
   const [info, setInfo] = useState([]);
 
-
   useEffect(() => {
-    axios
-      .get(`http://localhost:8000/api/ginfo`)
-      .then(function (response) {
-        setInfo(response.data)
-        console.log(info);
-        
-      })
-      .catch(function (error) {
-        console.log(error);
-        alert(error);
-      })
+    const sightings = handleGetSightings();
+    setInfo(sightings);
   }, []);
 
   return (
