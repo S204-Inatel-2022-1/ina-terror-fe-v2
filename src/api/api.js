@@ -22,7 +22,7 @@ export function createAccount(name, password) {
 }
 
 export function handleLogin(name, password, history) {
-  api
+  api 
     .get(`api/info/${name}?password=${password}`)
     .then(function (response) {
       const info = response.data;
@@ -62,3 +62,10 @@ export function handleGetSightings() {
 
   return mock;
 }
+
+// export function handleGoBack() {
+//   return (
+//     const history = useHistory();
+//     history.push("/menu")
+//   )
+// }
