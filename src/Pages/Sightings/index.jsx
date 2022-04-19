@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Wrapper, Container } from "./style";
 import { handleGetSightings } from "../../api/api";
-import { useHistory } from "react-router-dom";
 
 function ListSightings({ props }) {
   return (
@@ -16,7 +15,7 @@ function ListSightings({ props }) {
 
 export default function Sightings() {
   const [info, setInfo] = useState([]);
-  const history = useHistory();
+
   useEffect(() => {
     const sightings = handleGetSightings();
     setInfo(sightings);
@@ -28,8 +27,6 @@ export default function Sightings() {
         {info.map((event) => (
           <ListSightings props={event} />
         ))}
-
-        <button onClick={() => history.push("/menu")} className="goback">Go Back</button>
       </Wrapper>
     </Container>
   );

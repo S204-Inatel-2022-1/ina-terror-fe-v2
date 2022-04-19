@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 import { createAccount } from "./../../api/api";
 import { handleLogin } from "./../../api/api";
 
-export default function Login() { 
+export default function Login() {
   const history = useHistory();
   return (
     <Form

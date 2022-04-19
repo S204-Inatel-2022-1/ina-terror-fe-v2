@@ -1,12 +1,12 @@
 import React from "react";
 import axios from "axios";
 import { Wrapper, Note, NoteMenu } from "./style";
-import { useHistory } from 'react-router-dom';
 
 export default class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = { name: "", oldPassword: "", newPassword: "" };
+
 
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleNewPassChange = this.handleNewPassChange.bind(this);
@@ -46,7 +46,6 @@ export default class Login extends React.Component {
     
   }
 
-
   handleDelete(name, password) {
     axios
       .delete(`http://localhost:8000/api/info/${name}`)
@@ -61,7 +60,6 @@ export default class Login extends React.Component {
       });
   }
 
-  
   render() {
     return (
       <Wrapper>
@@ -106,11 +104,9 @@ export default class Login extends React.Component {
             >
               Delete Account
             </button>
-
           </NoteMenu>
         </Note>
       </Wrapper>
     );
   }
 }
-

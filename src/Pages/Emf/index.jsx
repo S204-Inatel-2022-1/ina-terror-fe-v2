@@ -14,12 +14,10 @@ import {
   DecorationLeft,
   Alert,
 } from "./style";
-import { useHistory } from "react-router-dom";
 
 export default function Emf() {
   const [leds, setLeds] = useState([false, false, false, false, false]);
   const [play, setPlay] = useState(false);
-  const history = useHistory();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -85,7 +83,6 @@ export default function Emf() {
 
       <DecorationRight />
       <DecorationLeft />
-      <button onClick={() => history.push("/menu")} className="goback">Go Back</button>
     </Wrapper>
   );
 }
