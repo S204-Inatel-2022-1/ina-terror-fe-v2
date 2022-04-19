@@ -20,8 +20,6 @@ export default function Emf() {
         </button>
 
         <button onClick={() => history.push("/menu/account")}>Account</button>
-
-        <button onClick={() => history.push("/")}>Go Back</button>
       </Note>
     </Wrapper>
   );

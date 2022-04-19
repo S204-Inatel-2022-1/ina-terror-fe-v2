@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-let colorback = "#5f5f5f";
-
 export const Wrapper = styled.div`
   width: 100vw;
   height: 100vh;
@@ -18,18 +16,6 @@ export const Wrapper = styled.div`
     height: 40px;
     border-radius: 20px;
     margin: 40px 10px;
-  }
-
-  button.goback {
-    background: ${colorback};
-    font-family: "Rock Salt", cursive;
-    font-size: 1rem;
-    color: black;
-    border: none;
-    border-radius: 5px;
-    margin: 80px 10px 10px 10px;
-    min-width: 100px;
-    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
   }
 `;
 
