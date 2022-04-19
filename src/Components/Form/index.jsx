@@ -2,12 +2,10 @@ import React, { useState } from "react";
 import { Wrapper, Note, NoteMenu } from "./style";
 import img from "../../assets/note.png";
 import logo from "../../assets/logo.png";
-import { useHistory } from 'react-router-dom';
 
 export default function Form(props) {
   const [name, setName] = useState();
   const [pass, setPass] = useState();
-  
 
   function handleNameChange(event) {
     setName( event.target.value );
@@ -29,7 +27,13 @@ export default function Form(props) {
     }
   }
 
+  function handleGoBack(event) {
+    event.preventDefault();
+    history.push("/menu")
+  }
+
   return (
+
     <Wrapper>
       <img src={logo} alt="" />
       <Note>
@@ -53,6 +57,7 @@ export default function Form(props) {
           <button onClick={() => props.handleLogin(name, pass, props.history)}>
             {props.buttonLabel2}
           </button>
+
         </NoteMenu>
       </Note>
     </Wrapper>

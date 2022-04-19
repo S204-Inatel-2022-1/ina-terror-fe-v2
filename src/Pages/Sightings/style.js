@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import img from "../../assets/note4.png";
 
+let lettercolor = "#e7e1c9";
+let myRed1 = "#ba0003";
+
 export const Container = styled.div`
   background-image: url(${img});
   background-position: center -200px;
@@ -687,5 +690,17 @@ export const Wrapper = styled.div`
 
   .checkbox-off {
     background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+  }
+
+  button.goback {
+    background: ${myRed1};
+    font-family: "Rock Salt", cursive;
+    font-size: 1rem;
+    color: ${lettercolor};
+    border: none;
+    border-radius: 5px;
+    margin: 40px 10px 40px 10px;
+    min-width: 100px;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
   }
 `;

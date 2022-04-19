@@ -130,6 +130,8 @@ export default function Article() {
     <Container>
       <Wrapper>
         <Markdown>{input}</Markdown>
+
+        <button onClick={() => history.push("/menu")} className="goback">Go Back</button>
       </Wrapper>
     </Container>
   );
