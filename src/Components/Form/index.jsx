@@ -27,11 +27,6 @@ export default function Form(props) {
     }
   }
 
-  function handleGoBack(event) {
-    event.preventDefault();
-    history.push("/menu")
-  }
-
   return (
 
     <Wrapper>
