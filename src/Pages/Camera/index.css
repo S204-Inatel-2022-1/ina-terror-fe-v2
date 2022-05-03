@@ -38,8 +38,8 @@ video{
 }
 
 button{
-  position: absolute;
-  bottom: 20px;
+  /* position: absolute;  não da pra usar flex com o position absolute*/
+  /* bottom: 20px; */
   left: 20px;
 
   appearance: none;
@@ -62,4 +62,40 @@ button:hover{
 canvas{
   width: 100%;
   height: auto;
+}
+
+/*============================ Botões da Câmera ============================*/
+.snapPhoto {
+  position: relative;
+  bottom: 8em;
+}
+
+.cameraButtons{
+  display:flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  position: relative;
+  bottom: 40em;
+}
+
+.recordButton, .stopButton, .restartButton {
+  background-image: none;
+  background-color: transparent;
+  bottom: 0px;
+} 
+
+.recIcon {
+  margin: 15px 0px 0px 20px;
+}
+
+.recordButton {left: 130px;} 
+
+.stopButton {left: 220px;}
+
+.restartButton {left: 305px}
+
+.recordButton img:hover, .stopButton img:hover, .restartButton img:hover {
+  width: 67px;
+  height: 67px;
 }
