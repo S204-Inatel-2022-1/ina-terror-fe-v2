@@ -1,4 +1,9 @@
 import React, {useRef, useEffect, useState} from "react";
+import recordImg from "./imgs/record-3.png";
+import stopImg from "./imgs/stop1.png";
+import restartImg from "./imgs/reloading.png";
+import recImg from "./imgs/rec.png";
+
 function App() {
 
   const videoRef = useRef(null);
@@ -52,12 +57,18 @@ function App() {
   return (
     <div className="App">
     <div className="camera">
+      <img className="recIcon" src={recImg} alt="Rercoding"/>
       <video ref={videoRef}></video>
-      <button onClick={takePhoto}>SNAP</button>
+      <button className="snapPhoto" onClick={takePhoto}>SNAP</button>
+      <div className="cameraButtons">
+          <button className="recordButton"><img src={recordImg} alt="Record"/></button>
+          <button className="stopButton"><img src={stopImg} alt="Stop"/></button>
+          <button className="restartButton"><img src={restartImg} alt="Restart"/></button>
+      </div>
     </div>
     <div className={'result ' + (hasPhoto ? 'hasPhoto': '')}>
       <canvas ref={photoRef}></canvas>
-      <button onClick={closePhoto}>CLOSE</button>
+      <button className="closeWindow" onClick={closePhoto}>CLOSE</button>
     </div>
     </div>
   );
