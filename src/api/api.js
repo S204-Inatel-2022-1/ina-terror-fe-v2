@@ -5,20 +5,21 @@ export const api = axios.create({
   baseURL: "http://localhost:8000/",
 });
 
-export function createAccount(name, password) {
-  console.log(name, password);
-  api
-    .post("api/info/", {
-      user: name,
-      password: password,
+export async function createAccount(name, password) {
+  const result = await api
+    .post("user/create", {
+      name: name,
+      pass: password,
     })
     .then(function (response) {
-      console.log(response);
+      return true
     })
     .catch(function (error) {
       console.log(error);
+      return false
     });
-  console.log("rodou aqui");
+
+  return result;
 }
 
 export async function handleLogin(name, password) {
@@ -31,7 +32,6 @@ export async function handleLogin(name, password) {
       const info = response.data;
       console.log(response.status);
       if (response.status == 200) {
-        console.log("logou");
         return true;
       }
       return false;
