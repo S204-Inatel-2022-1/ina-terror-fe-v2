@@ -21,23 +21,27 @@ export function createAccount(name, password) {
   console.log("rodou aqui");
 }
 
-export function handleLogin(name, password, history) {
-  api
-    .get(`api/info/${name}?password=${password}`)
+export async function handleLogin(name, password) {
+  const result = await api
+    .post(`user/login`, {
+      name: name,
+      pass: password,
+    })
     .then(function (response) {
       const info = response.data;
-
-      console.log(info);
-      if (info.user == name) {
-        console.log("true");
-        history.push("/menu");
+      console.log(response.status);
+      if (response.status == 200) {
+        console.log("logou");
+        return true;
       }
+      return false;
     })
     .catch(function (error) {
       console.log(error);
-      alert(error);
+      return false
     });
-  history.push("/menu");
+
+  return result;
 }
 
 export function handleGetSightings() {
