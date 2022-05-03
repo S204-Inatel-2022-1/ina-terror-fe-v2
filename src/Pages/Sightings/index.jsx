@@ -16,8 +16,8 @@ function ListSightings({ props }) {
 export default function Sightings() {
   const [info, setInfo] = useState([]);
 
-  useEffect(() => {
-    const sightings = handleGetSightings();
+  useEffect(async () => {
+    const sightings = await handleGetSightings();
     setInfo(sightings);
   }, []);
 

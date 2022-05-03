@@ -43,25 +43,17 @@ export async function handleLogin(name, password) {
   return result;
 }
 
-export function handleGetSightings() {
-  const mock = [
-    { id: 1, lat: "-64.7418", lon: "46.0406", time: "12:00" },
-    { id: 2, lat: "-64.7418", lon: "46.0406", time: "12:00" },
-    { id: 3, lat: "-64.7418", lon: "46.0406", time: "12:00" },
-    { id: 4, lat: "-64.7418", lon: "46.0406", time: "12:00" },
-    { id: 5, lat: "-64.7418", lon: "46.0406", time: "12:00" },
-    { id: 6, lat: "-64.7418", lon: "46.0406", time: "12:00" },
-    { id: 7, lat: "-64.7418", lon: "46.0406", time: "12:00" },
-  ];
-
-  api
-    .get(`api/ginfo`)
+export async function handleGetSightings() {
+  const data = await api
+    .get(`user/sightings`)
     .then(function (response) {
-      console.log(response);
+      console.log(response.data);
+      return response.data;
     })
     .catch(function (error) {
       console.log(error);
+      return [];
     });
 
-  return mock;
+  return data;
 }
