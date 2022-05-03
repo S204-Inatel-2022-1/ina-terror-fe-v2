@@ -1,8 +1,8 @@
 import React, {useRef, useEffect, useState} from "react";
-import recordImg from "./imgs/record-3.png";
-import stopImg from "./imgs/stop1.png";
-import restartImg from "./imgs/reloading.png";
-import recImg from "./imgs/rec.png";
+import recordImg from "./././imgs/record-3.png";
+import stopImg from "./././imgs/stop1.png";
+import restartImg from "./././imgs/reloading.png";
+import recImg from "./././imgs/rec.png";
 
 function App() {
 
