@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { createAccount } from "./../../api/api";
 import { handleLogin } from "./../../api/api";
 import { Wrapper, Note, NoteMenu } from "./style";
-import img from "../../assets/note.png";
 import logo from "../../assets/logo.png";
 
 export default function Login() {
