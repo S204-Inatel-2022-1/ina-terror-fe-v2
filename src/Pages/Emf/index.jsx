@@ -14,6 +14,7 @@ import {
   DecorationLeft,
   Alert,
 } from "./style";
+import { handlePostSighting } from "../../api/api";
 
 export default function Emf() {
   const [leds, setLeds] = useState([false, false, false, false, false]);
@@ -33,8 +34,25 @@ export default function Emf() {
     setPlay(!play);
   };
 
+  async function getGeoLocation() {
+    const result = await navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const { latitude, longitude } = position.coords;
+        const data = {
+          latitude,
+          longitude,
+        };
+        return data;
+      },
+      (error) => {
+        console.log(error);
+        return false;
+      }
+    );
+    console.log(result);
+  }
+
   useEffect(() => {
-    //date
     var date = new Date();
     var now = `${date.getHours()}:${date.getMinutes()}`;
 
@@ -44,24 +62,18 @@ export default function Emf() {
 
     if (leds[4] || leds[3] || leds[2]) {
       alert("enviando");
+      getGeoLocation();
       navigator.geolocation.getCurrentPosition((pos) => {
         lat = pos.coords.latitude;
         lon = pos.coords.longitude;
-
-        axios
-          .post("http://localhost:8000/api/ginfo/", {
-            lat: lat,
-            lon: lon,
-            time: now,
-          })
-          .then(function (response) {
-            console.log(response);
-            alert(response);
-          })
-          .catch(function (error) {
-            console.log(error);
-            alert(error);
-          });
+        console.log(lat, lon);
+        handlePostSighting({
+          lat: lat,
+          lon: lon,
+          time: now,
+        });
+        alert("Aparição regisdrada com sucesso!");
+        
       });
     }
   }, [leds]);

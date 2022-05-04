@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: "http://localhost:8000/",
+  baseURL: "https://inaterror2.herokuapp.com",
 });
 
 export async function createAccount(name, password) {
@@ -56,4 +56,21 @@ export async function handleGetSightings() {
     });
 
   return data;
+}
+
+export async function handlePostSighting(data) {
+  const result = await api
+    .post(`user/sightings`, data)
+    .then(function (response) {
+      if(response.status == 200){
+        return true;
+      }
+      return false;
+    })
+    .catch(function (error) {
+      console.log(error);
+      return false;
+    });
+
+  return result;
 }
