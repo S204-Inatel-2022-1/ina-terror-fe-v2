@@ -1,8 +1,11 @@
-# InaTerror
 
-## Project for database 2 :book:
+<p style="">
+<img 
+    src="https://cdn.discordapp.com/attachments/840344823348985878/973355003735588885/Group_4.png" 
+    style="width: 150px"
+/>
 
-This project is a ghost radar for a college subject.
+# InaTerror Front-end ReactJS
 
 ## Technologies :rocket:
 
@@ -28,8 +31,6 @@ This project is a ghost radar for a college subject.
 ```bash
  npm start
 ```
-## Video
-<iframe width="560" height="315" src="https://www.youtube.com/embed/NDljImx0IWw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## User Interface 🎨
 
