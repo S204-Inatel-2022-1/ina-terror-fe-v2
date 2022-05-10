@@ -4,7 +4,7 @@ import stopImg from "./imgs/stop1.png";
 import restartImg from "./imgs/reloading.png";
 import recImg from "./imgs/rec.png";
 
-function App() {
+function Camera() {
 
   const videoRef = useRef(null);
   const photoRef = useRef(null);
@@ -55,8 +55,8 @@ function App() {
  
   }, [videoRef])
   return (
-    <div className="App">
-      <div className="camera">
+    <div className="Camera">
+      <div className="subcamera">
         <img className="recIcon" src={recImg} alt="Rercoding"/>
         <video ref={videoRef}></video>
         <button  className="snapPhoto" onClick={takePhoto}>SNAP</button>
@@ -74,4 +74,4 @@ function App() {
   );
 }
 
-export default App;
+export default Camera;
