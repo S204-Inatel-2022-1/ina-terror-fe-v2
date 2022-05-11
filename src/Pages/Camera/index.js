@@ -56,14 +56,17 @@ function App() {
   }, [videoRef])
   return (
     <div className="App">
+          <div className="ButtonBackg"><div className="recordButton"></div></div>
       <div className="camera">
         <img className="recIcon" src={recImg} alt="Rercoding"/>
         <video ref={videoRef}></video>
         <button  className="snapPhoto" onClick={takePhoto}>SNAP</button>
         <div className="cameraButtons">
-          <button className="recordButton"><img src={recordImg} alt="Record"/></button>
-          <button className="stopButton"><img src={stopImg} alt="Stop"/></button>
-          <button className="restartButton"><img src={restartImg} alt="Restart"/></button>
+          {/* <img src={recordImg} alt="Record"/> */}
+          <div className="ButtonBackg"><div className="stopButton"></div></div>
+            {/* <img src={stopImg} alt="Stop"/> */}
+          {/* <button className="restartButton"><img src={restartImg} alt="Restart"/></button> */}
+          <div className="ButtonBackg"><div className="restartButton"></div></div>
         </div>
       </div>
       <div className={'result ' + (hasPhoto ? 'hasPhoto': '')}>

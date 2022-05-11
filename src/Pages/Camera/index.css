@@ -37,9 +37,9 @@ video{
   height: auto;
 }
 
-button {
+/* button {
   /* position: absolute;  não da pra usar flex com o position absolute*/
-  /* bottom: 20px; */
+  /* bottom: 20px; 
   left: 20px; 
 
   appearance: none;
@@ -53,7 +53,7 @@ button {
   color: #FFF;
   font-size: 24px;
   font-weight: 700;
-}
+} */
 
 button:hover{
   background-position: 100%;
@@ -80,8 +80,8 @@ canvas{
 }
 
 .recordButton, .stopButton, .restartButton {
-  background-image: none;
-  background-color: transparent;
+  /* background-image: none;
+  background-color: transparent; */
   bottom: 0px;
 } 
 
@@ -89,7 +89,29 @@ canvas{
   margin: 15px 0px 0px 20px;
 }
 
-.recordButton {left: 130px;} 
+button {
+  border: none;
+  background-color: transparent;
+}
+.ButtonBackg {
+  width: 75px;
+  height: 75px;
+  background: #393A32;
+  border-radius: 88px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;
+}
+
+.recordButton {
+  /* left: 130px; */
+  width: 24px;
+  height: 24px;
+  background: #9C0024;
+  border-radius: 88px;
+
+} 
 
 .stopButton {left: 220px;}
 

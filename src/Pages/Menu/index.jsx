@@ -11,6 +11,8 @@ export default function Emf() {
           Hunt Ghosts
         </button>
 
+        <button onClick={() => history.push("/menu/camera")}>Supernatural Camera</button>
+
         <button onClick={() => history.push("/menu/article")}>
           Infernal Dictionary
         </button>
@@ -20,6 +22,8 @@ export default function Emf() {
         </button>
 
         <button onClick={() => history.push("/menu/account")}>Account</button>
+
+        <button onClick={() => history.push("/")}>Go Back</button>
       </Note>
     </Wrapper>
   );
