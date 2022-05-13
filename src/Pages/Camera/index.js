@@ -1,7 +1,7 @@
 import React, {useRef, useEffect, useState} from "react";
-import recordImg from "./imgs/record-3.png";
-import stopImg from "./imgs/stop1.png";
-import restartImg from "./imgs/reloading.png";
+import recordImg from "./imgs/record.png";
+import stopImg from "./imgs/stop2.png";
+import restartImg from "./imgs/restart.png";
 import recImg from "./imgs/rec.png";
 
 function App() {
@@ -56,22 +56,20 @@ function App() {
   }, [videoRef])
   return (
     <div className="App">
-          <div className="ButtonBackg"><div className="recordButton"></div></div>
       <div className="camera">
-        <img className="recIcon" src={recImg} alt="Rercoding"/>
+        <header><img className="recIcon" src={recImg} alt="Rercoding"/></header>
         <video ref={videoRef}></video>
-        <button  className="snapPhoto" onClick={takePhoto}>SNAP</button>
         <div className="cameraButtons">
-          {/* <img src={recordImg} alt="Record"/> */}
-          <div className="ButtonBackg"><div className="stopButton"></div></div>
-            {/* <img src={stopImg} alt="Stop"/> */}
-          {/* <button className="restartButton"><img src={restartImg} alt="Restart"/></button> */}
-          <div className="ButtonBackg"><div className="restartButton"></div></div>
+          <button className="recordButton"><img src={recordImg}></img></button>
+          <button className="stopButton"><img src={stopImg}></img></button>
+          <button className="restartButton"><img src={restartImg}></img></button>
         </div>
-      </div>
-      <div className={'result ' + (hasPhoto ? 'hasPhoto': '')}>
-        <canvas ref={photoRef}></canvas>
-        <button className="closeWindow" onClick={closePhoto}>CLOSE</button>
+      
+        <button className="snapPhoto" onClick={takePhoto}>SNAP</button>
+        <div className={'result ' + (hasPhoto ? 'hasPhoto': '')}>
+          <canvas ref={photoRef}></canvas>
+          <button className="closeWindow" onClick={closePhoto}>CLOSE</button>
+        </div>
       </div>
     </div>
   );

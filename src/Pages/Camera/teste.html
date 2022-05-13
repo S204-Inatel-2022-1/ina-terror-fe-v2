@@ -7,31 +7,67 @@
     <style>
 
         button {
-            border: none;
-            background-color: transparent;
+          border: none;
+          background-color: transparent;
         }
         .recordButtonBackg {
-            width: 75px;
-            height: 75px;
-            background: #393A32;
-            border-radius: 88px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+          width: 75px;
+          height: 75px;
+          background: #393A32;
+          border-radius: 88px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
 
         .recordButton {
-            /* left: 130px; */
-            width: 24px;
-            height: 24px;
-            background: #9C0024;
-            border-radius: 88px;
-
+          /* left: 130px; */
+          width: 24px;
+          height: 24px;
+          background: #9C0024;
+          border-radius: 88px;
         } 
+
+        .stopButton {
+          left: 220px;
+          width: 24px;
+          height: 24px;
+          background: #006B79;
+        }
+
+        .recordButtonBackg2 {
+          background: #393A32;
+          border-radius: 13px;
+          width: 75px;
+          height: 73px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .restartButton {
+          left: 220px;
+          width: 40px;
+          height: 39px;
+          background: #2E2E2E;
+          border-radius: 4px;
+        }
+
 
     </style>
   </head>
   <body>
-    <button ><div class="recordButtonBackg"><div class="recordButton"></div></div></button>
+    <button><div class="recordButtonBackg"><div class="recordButton"></div></div></button>
+    <button></div><div class="recordButtonBackg"><div class="stopButton"></div></div></button>
+    <button><div class="recordButtonBackg2"><div class="restartButton"></div></div></button>
   </body>
 </html>
+
+
+<!-- {/* <img src={recordImg} alt="Record"/> */} -->
+<!-- {/* <img src={stopImg} alt="Stop"/> */}
+{/* <button className="restartButton"><img src={restartImg} alt="Restart"/></button> */} -->
+<!-- controls={true} -->
+
+<!-- {/* <div className="ButtonBackg"><div className="recordButton"></div></div> */}
+          {/* <div className="ButtonBackg"><div className="stopButton"></div></div>
+          <div className="ButtonBackg2"><div className="restartButton"></div></div> */} -->

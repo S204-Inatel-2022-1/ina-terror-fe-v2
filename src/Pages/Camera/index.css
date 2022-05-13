@@ -12,29 +12,23 @@
 }
 
 .camera{
-   position: relative;
+  position: absolute;
 }
 
 .result{
-   position: fixed;
-   top: 0;
-   left: 100%;
-   width: 100%;
-   height: 100%;
-   display: flex;
-   align-items: center;
-   background-color: rgb(0, 0, 0, 0.9);
-   transition: 0.4s;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background-color: rgb(0, 0, 0, 0.9);
+  transition: 0.4s;
 }
 
 .result.hasPhoto{
   left: 0;
-}
-
-video{
-  width: 100%;
-  max-width: 100%;
-  height: auto;
 }
 
 /* button {
@@ -55,8 +49,24 @@ video{
   font-weight: 700;
 } */
 
-button:hover{
+button {
+  border: none;
+  background-color: transparent;
+  background-image: none;
+  appearance: none;
+  outline: none;
+}
+
+button:hover {
   background-position: 100%;
+}
+
+video{
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  top: 0px;
+  left: 0px;
 }
 
 canvas{
@@ -65,9 +75,13 @@ canvas{
 }
 
 /*============================ Botões da Câmera ============================*/
-.snapPhoto {
+.snapPhoto, .closeWindow {
   position: relative;
   bottom: 8em;
+}
+
+.camera {
+  background-color: #626262;
 }
 
 .cameraButtons{
@@ -85,37 +99,29 @@ canvas{
   bottom: 0px;
 } 
 
+/* header {
+  width: fit-content;
+  display: contents;
+} */
+
 .recIcon {
   margin: 15px 0px 0px 20px;
+  position: relative;
+  top: 30px;
 }
 
-button {
-  border: none;
-  background-color: transparent;
-}
-.ButtonBackg {
-  width: 75px;
-  height: 75px;
-  background: #393A32;
-  border-radius: 88px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999999;
-}
-
-.recordButton {
-  /* left: 130px; */
-  width: 24px;
-  height: 24px;
-  background: #9C0024;
-  border-radius: 88px;
-
+.recordButton img {
+  left: 130px;
 } 
 
-.stopButton {left: 220px;}
+.stopButton img{
+  left: 220px;
+}
 
-.restartButton {left: 305px}
+
+.restartButton img {
+  left: 220px;
+}
 
 .recordButton img:hover, .stopButton img:hover, .restartButton img:hover {
   width: 67px;
