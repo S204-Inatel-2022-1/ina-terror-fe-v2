@@ -19,7 +19,7 @@ export default function Login() {
     setPass(event.target.value);
   }
 
-  async function handleLogin() {
+  async function handleLogina() {
     const response = await handleLogin(name, pass);
 
     console.log(response);
@@ -68,7 +68,7 @@ export default function Login() {
 
             <input type="submit" value="Criar conta" />
           </form>
-          <button onClick={() => handleLogin()}>Entrar</button>
+          <button onClick={() => handleLogina()}>Entrar</button>
         </NoteMenu>
       </Note>
     </Wrapper>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Wrapper, Container } from "./style";
 import { handleGetSightings } from "../../api/api";
+import Back from './../../Components/BackArrow/index';
 
 function ListSightings({ props }) {
   return (
@@ -27,6 +28,10 @@ export default function Sightings() {
 
   return (
     <Container>
+      <Back />
+      <br></br>
+      <br></br>
+      <br></br>
       <Wrapper>
         {info.map((event) => (
           <ListSightings props={event} />

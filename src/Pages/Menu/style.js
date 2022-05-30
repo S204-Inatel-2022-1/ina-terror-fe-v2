@@ -4,7 +4,6 @@ import img from "../../assets/note4.png";
 let myRed1 = "#9C0025";
 
 export const Wrapper = styled.div`
-  
   width: 100vw;
   height: 100vh;
 
@@ -14,6 +13,7 @@ export const Wrapper = styled.div`
   align-items: center;
 
   background-color: #484848;
+
 
   button {
     background: transparent;

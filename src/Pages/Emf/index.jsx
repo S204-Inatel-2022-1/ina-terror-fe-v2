@@ -15,6 +15,7 @@ import {
   Alert,
 } from "./style";
 import { handlePostSighting } from "../../api/api";
+import Back from './../../Components/BackArrow/index';
 
 export default function Emf() {
   const [leds, setLeds] = useState([false, false, false, false, false]);
@@ -79,7 +80,12 @@ export default function Emf() {
   }, [leds]);
 
   return (
+    <>
+
     <Wrapper>
+    <Back />
+    <br />
+    <br />
       <Leds>
         <LedGreen className="led" ledOn={leds[0]} />
         <LedGreenYellow className="led" ledOn={leds[1]} />
@@ -96,5 +102,6 @@ export default function Emf() {
       <DecorationRight />
       <DecorationLeft />
     </Wrapper>
+    </>
   );
 }

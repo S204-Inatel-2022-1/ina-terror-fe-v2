@@ -2,6 +2,7 @@ import Markdown from "markdown-to-jsx";
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { Wrapper, Container } from "./style";
+import Back from './../../Components/BackArrow/index';
 
 const input = `
 # Ghosts
@@ -128,6 +129,10 @@ export default function Article() {
   const history = useHistory();
   return (
     <Container>
+      <Back />
+      <br />
+      <br />
+      <br />
       <Wrapper>
         <Markdown>{input}</Markdown>
       </Wrapper>

@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
+import Back from "../../Components/BackArrow";
 import { Wrapper, Button1, Button2, Bar, Button3, Bar2} from "./style";
 
 function App() {
@@ -48,6 +49,8 @@ function App() {
   }, [videoRef]);
 
   return (
+    <>
+      <Back />
     <Wrapper>
       <Bar>
         <Button1>
@@ -63,6 +66,7 @@ function App() {
       <video ref={videoRef}></video>
       <Bar2 />
     </Wrapper>
+    </>
   );
 }
 
