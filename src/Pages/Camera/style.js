@@ -118,6 +118,7 @@ export const Wrapper = styled.div`
 
   video{
     height: 100vh;
+    
   }
   @media(max-width: 800px) {
     align-items: center;
@@ -125,11 +126,11 @@ export const Wrapper = styled.div`
     video {
       /* width: 100vh; */
       z-index: -1;
-      height: 100vw;
-      width: 100vh;
+      /* height: 400px; */
+      width: 100%;
 
-      /* background-color: blue; */
-      transform: rotate(-0.25turn);
+      
+      /* transform: rotate(-0.25turn); */
     }
   }
   z-index: -2;
