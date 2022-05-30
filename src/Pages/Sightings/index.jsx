@@ -2,15 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Wrapper, Container } from "./style";
 import { handleGetSightings } from "../../api/api";
 import Back from './../../Components/BackArrow/index';
+import ImageGhost from './../../Components/ImageGhost';
 
 function ListSightings({ props }) {
   return (
     <>
       <h1>Abyzou</h1>
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Asmodaeus.png/200px-Asmodaeus.png"
-        alt="Sighting"
-      />
+      <ImageGhost />
       <p>lat: {props.lat}</p>
       <p>lon: {props.lon}</p>
       <p>time: {props.time}</p>
