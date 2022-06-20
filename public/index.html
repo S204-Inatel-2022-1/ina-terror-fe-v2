@@ -16,6 +16,8 @@
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link rel="manifest" href="manifest.json"></link>
+    <link rel="stylesheet" href="no.css" />
+
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -28,7 +30,11 @@
     <title>InaTerror</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>
+      <div id="no-bg">
+        <h1> Error<br>No Internet Acess...</h1>
+      </div>
+    </noscript>
     <div id="root"></div>
     <!--
       This HTML file is a template.

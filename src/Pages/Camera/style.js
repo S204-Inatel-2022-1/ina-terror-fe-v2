@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import img from "../../assets/note4.png";
+import image from "./aura.gif";
 
 
 const myRed1 = "#9C0024"
@@ -77,7 +77,7 @@ export const Bar = styled.div`
   justify-content: space-evenly;
   align-items: center;
 
-  @media(max-width: 800px) {
+  @media(max-width: 400px) {
     width: 100vw;
     height:150px;
     flex-direction: row;
@@ -96,10 +96,48 @@ export const Bar2 = styled.div`
   justify-content: space-evenly;
   align-items: center;
 
-  @media(max-width: 800px) {
+  @media(max-width: 500px) {
     width: 100vw;
     height:50px;
   }
+`
+export const Container = styled.div`
+  position: relative;
+ @media only screen and (min-device-width: 700px) and (max-device-width: 1024px) and (orientation:portrait) { 
+    body {
+      -webkit-transform: rotate(90deg);
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: absolute;
+    }
+  }
+  
+#aura {
+
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  top: ${props => props.position.x + "px"};
+  left: ${props => props.position.y + "px"};
+  position: absolute;
+  width: 150px;
+  opacity: ${props => props.position.opacity};
+  z-index: 0;
+  /* remove black from img */
+  background-image: url(${image});
+
+  ${props => props.position.visible === false ? "display: none;" : ""}
+}
+  #listHP {
+    position: absolute;
+    bottom: 5px
+  }
+
+  #vida {
+    height: 50px;
+  }
+
 `
 
 export const Wrapper = styled.div`
@@ -114,13 +152,12 @@ export const Wrapper = styled.div`
 
   background-color: #484848;
 
- 
 
   video{
     height: 100vh;
     
   }
-  @media(max-width: 800px) {
+  @media(max-width: 500px) {
     align-items: center;
     justify-content: center;
     video {

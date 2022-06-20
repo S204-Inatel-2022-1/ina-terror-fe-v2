@@ -1,0 +1,14 @@
+html body {
+    padding: 0;
+    margin: 0;
+}
+
+#no-bg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #484848;
+    color: #FB4C30;
+    width: 100vw;
+    height: 100vh;
+}
