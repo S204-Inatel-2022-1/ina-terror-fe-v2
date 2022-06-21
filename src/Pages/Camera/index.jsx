@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState, useCallback } from "react";
 import Back from "../../Components/BackArrow";
 import vida from "./vida.png";
 import { handlePostOrb } from "../../api/api";
-import { useHistory } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 import {
   Wrapper,
   Button1,
@@ -17,9 +17,8 @@ import {
 function App() {
   const videoRef = useRef(null);
   const photoRef = useRef(null);
-  
-  const history = useHistory();
 
+  const history = useHistory();
 
   const [hasPhoto, sethasPhoto] = useState(false);
   const [position, setPosition] = useState({
@@ -48,8 +47,7 @@ function App() {
   const getVideo = () => {
     navigator.mediaDevices
       .getUserMedia({
-        video: { width: 1920, height: 1080 },
-        facingMode: "environment",
+        video: { width: 1920, height: 1080, facingMode: "environment" },
       })
       .then((stream) => {
         let video = videoRef.current;
@@ -75,15 +73,15 @@ function App() {
           opacity: randomNumber(0.2, 0.5),
         };
 
-        if (a < 100 ) {
+        if (a < 100) {
           visible = true;
         } else {
           visible = false;
         }
         console.log(visible);
-       
+
         setPosition(values, visible);
-      console.log(a, hp);
+        console.log(a, hp);
       }
     }, 1000);
 
@@ -115,25 +113,25 @@ function App() {
 
   async function registerORB() {
     const geolocation = getGeoLocation();
-    if(position.opacity > 0.6) {
+    if (position.opacity > 0.6) {
       alert("Aparição registrada com sucesso!");
       await handlePostOrb(geolocation);
     } else {
-      alert("game over")
-      history.push('/gameover');
+      alert("game over");
+      history.push("/gameover");
     }
   }
 
   return (
     <Container position={position}>
-            {/* <button onClick={() => {alert("asxsa")}}>asxsaxsax</button> */}
+      {/* <button onClick={() => {alert("asxsa")}}>asxsaxsax</button> */}
       {/* <div id="listHP">
         {vidas} {hp}
       </div> */}
       <Back />
-          <Button1 onClick={() => registerORB()}>
-            <div />
-          </Button1>
+      <Button1 onClick={() => registerORB()}>
+        <div />
+      </Button1>
       <Wrapper>
         <Bar>
           {/* <Button2>

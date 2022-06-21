@@ -58,12 +58,12 @@ export default function Login() {
 
           <form onSubmit={handleSubmit}>
             <label>
-              Nome:
-              <input type="text" value={name} onChange={handleNameChange} />
-            </label>
-            <label>
               Senha:
               <input type="password" value={pass} onChange={handlePassChange} />
+            </label>
+            <label>
+              Nome:
+              <input type="text" value={name} onChange={handleNameChange} />
             </label>
 
             <input type="submit" value="Criar conta" />
