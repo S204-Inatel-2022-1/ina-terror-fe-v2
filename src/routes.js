@@ -7,6 +7,7 @@ import Article from "./Pages/Article"
 import Account from "./Pages/Account"
 import Sightings from "./Pages/Sightings" 
 import Camera from "./Pages/Camera";
+import Gameover from "./Pages/Gameover";
 
 const rootElement = document.getElementById("root");
 export default function  () {
@@ -20,6 +21,7 @@ export default function  () {
         <Route exact path="/menu/account" component={Account} />
         <Route exact path="/menu/sightings" component={Sightings} />
         <Route exact path="/menu/camera" component={Camera} />
+        <Route exact path="/gameover" component={Gameover} />
       </Switch>
     </BrowserRouter>
   );

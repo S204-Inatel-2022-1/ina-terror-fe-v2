@@ -1,6 +1,8 @@
 import React, { useRef, useEffect, useState, useCallback } from "react";
 import Back from "../../Components/BackArrow";
 import vida from "./vida.png";
+import { handlePostOrb } from "../../api/api";
+import { useHistory } from 'react-router-dom';
 import {
   Wrapper,
   Button1,
@@ -11,11 +13,13 @@ import {
   Container,
   ListHP,
 } from "./style";
-import { randomNumber } from "./../../utils/leds";
 
 function App() {
   const videoRef = useRef(null);
   const photoRef = useRef(null);
+  
+  const history = useHistory();
+
 
   const [hasPhoto, sethasPhoto] = useState(false);
   const [position, setPosition] = useState({
@@ -64,48 +68,87 @@ function App() {
     const time = setInterval(() => {
       const a = randomNumber(0, 200);
       if (hp > 0) {
-        // var visible = false;
-        // const values = {
-        //   x: randomNumber(0, 200),
-        //   y: randomNumber(0, 200),
-        //   opacity: randomNumber(0.5, 0.9),
-        // };
-        // if (values.x < 200 && values.y < 200) {
-        //   visible = true;
-        // }
-        setHp(hp - 1);
-        // setPosition(values, visible);
+        var visible = false;
+        const values = {
+          x: randomNumber(0, 200),
+          y: randomNumber(0, 500),
+          opacity: randomNumber(0.2, 0.5),
+        };
+
+        if (a < 100 ) {
+          visible = true;
+        } else {
+          visible = false;
+        }
+        console.log(visible);
+       
+        setPosition(values, visible);
       console.log(a, hp);
       }
-    }, 3000);
+    }, 1000);
 
     return () => clearInterval(time);
   }, [videoRef]);
 
+  function teste() {
+    alert("teste");
+    console.log("position");
+  }
+
+  async function getGeoLocation() {
+    const result = await navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const { latitude, longitude } = position.coords;
+        const data = {
+          latitude,
+          longitude,
+        };
+        return data;
+      },
+      (error) => {
+        console.log(error);
+        return false;
+      }
+    );
+    console.log(result);
+  }
+
+  async function registerORB() {
+    const geolocation = getGeoLocation();
+    if(position.opacity > 0.6) {
+      alert("Aparição registrada com sucesso!");
+      await handlePostOrb(geolocation);
+    } else {
+      alert("game over")
+      history.push('/gameover');
+    }
+  }
+
   return (
     <Container position={position}>
-      <div id="listHP">
+            {/* <button onClick={() => {alert("asxsa")}}>asxsaxsax</button> */}
+      {/* <div id="listHP">
         {vidas} {hp}
-      </div>
+      </div> */}
       <Back />
-      <Wrapper>
-        <Bar>
-          <Button1 onClick={() => {console.log("awscsa")}}>
+          <Button1 onClick={() => registerORB()}>
             <div />
           </Button1>
-          <Button2>
+      <Wrapper>
+        <Bar>
+          {/* <Button2>
             <div />
           </Button2>
           <Button3>
             <div />
-          </Button3>
+          </Button3> */}
         </Bar>
         <div
           id="aura"
           // src="https://c.tenor.com/3uPr2xZyhr8AAAAC/aura.gif"
         />
         <video ref={videoRef}></video>
-        <Bar2 />
+        {/* <Bar2 /> */}
       </Wrapper>
     </Container>
   );

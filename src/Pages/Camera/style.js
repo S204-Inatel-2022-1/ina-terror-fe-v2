@@ -5,6 +5,8 @@ import image from "./aura.gif";
 const myRed1 = "#9C0024"
 
 export const Button1 = styled.button`
+  position: absolute !important;
+  z-index: 9999999;
   background-color: #393A32;
   width: 100px;
   height:100px;
@@ -13,7 +15,7 @@ export const Button1 = styled.button`
   justify-content: center;
   align-items: center;
 
-  top: 10px;
+  bottom: 10px;
   right: 10px;
 
   div {
@@ -65,7 +67,7 @@ export const Button3 = styled.button`
 `;
 
 export const Bar = styled.div`
-  position: absolute;
+  /* position: absolute; */
   background-color: #484848;
   width: 150px;
   height:100vh;
@@ -114,20 +116,18 @@ export const Container = styled.div`
   }
   
 #aura {
-
   height: 150px;
-  background-size: cover;
+  background-size: 100px 150px; 
   background-position: center;
   top: ${props => props.position.x + "px"};
   left: ${props => props.position.y + "px"};
   position: absolute;
-  width: 150px;
-  opacity: ${props => props.position.opacity};
+  width: 100px;
   z-index: 0;
   /* remove black from img */
   background-image: url(${image});
 
-  ${props => props.position.visible === false ? "display: none;" : ""}
+  opacity: ${props => props.position.visible ? 0 : props.position.opacity}
 }
   #listHP {
     position: absolute;
@@ -164,7 +164,7 @@ export const Wrapper = styled.div`
       /* width: 100vh; */
       z-index: -1;
       /* height: 400px; */
-      width: 100%;
+      height: 100vh;
 
       
       /* transform: rotate(-0.25turn); */

@@ -4,11 +4,11 @@ import { handleGetSightings } from "../../api/api";
 import Back from "../BackArrow/index";
 import axios from "axios";
 
-const api = axios.create({
-  baseURL: "https://inaterror-api.herokuapp.com/api/",
+// const api = axios.create({
+//   baseURL: "https://inaterror-api.herokuapp.com/api/",
 
-});
-export default function Sightings() {
+// });
+export default function Sightings({id, invert, rarity}) {
   const [data, setData] = useState('');
 
   useEffect(() => {
@@ -17,8 +17,10 @@ export default function Sightings() {
 
 
   async function handle() {
-    const data = await api
-      .get("info/45gerfg/image")
+    const query = `https://inaterror-api.herokuapp.com/api/info/${id}/${invert}/${rarity}/image`
+    console.log(query);
+    const data = await axios
+      .get(query)
       .then(function (response) {
         console.log(response.data);
         setData(response.data);

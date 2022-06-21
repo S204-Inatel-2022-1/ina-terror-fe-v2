@@ -1,17 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { Wrapper, Container } from "./style";
-import { handleGetSightings } from "../../api/api";
+import { handleGetOrb, handleGetSightings } from "../../api/api";
 import Back from './../../Components/BackArrow/index';
 import ImageGhost from './../../Components/ImageGhost';
 
-function ListSightings({ props }) {
+function ListOrb({ props }) {
+  console.log('props', props.id, props.invert, props.raridade);
   return (
     <>
-      <h1>Abyzou</h1>
-      <ImageGhost />
-      <p>lat: {props.lat}</p>
-      <p>lon: {props.lon}</p>
-      <p>time: {props.time}</p>
+    <br></br>
+      <ImageGhost id={props.id} invert={props.invert} rarity={props.raridade}/>
+      <p>Nome: {props.nome}</p>
+      <p>Localização: {props.localização}</p>
+      <p>Raridade: {props.raridade}</p>
+      <p>Tipo: {props.tipo}</p>
+      <p>_______________________________</p>
+
+
     </>
   );
 }
@@ -19,9 +24,11 @@ function ListSightings({ props }) {
 export default function Sightings() {
   const [info, setInfo] = useState([]);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(async () => {
-    const sightings = await handleGetSightings();
-    setInfo(sightings);
+    const orb = await handleGetOrb();
+    setInfo(orb.reverse());
+    console.log(orb);
   }, []);
 
   return (
@@ -32,7 +39,7 @@ export default function Sightings() {
       <br></br>
       <Wrapper>
         {info.map((event) => (
-          <ListSightings props={event} />
+          <ListOrb props={event} />
         ))}
       </Wrapper>
     </Container>

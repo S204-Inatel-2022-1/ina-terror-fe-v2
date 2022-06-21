@@ -1,7 +1,9 @@
 import axios from "axios";
+// const axios = require('axios')
 
 export const api = axios.create({
-  baseURL: "https://inaterror2.herokuapp.com",
+  // baseURL: "https://inaterror2.herokuapp.com",
+  baseURL: "https://inaterror.herokuapp.com/",
 });
 
 export async function createAccount(name, password) {
@@ -62,7 +64,36 @@ export async function handlePostSighting(data) {
   const result = await api
     .post(`user/sightings`, data)
     .then(function (response) {
-      if(response.status == 200){
+      if (response.status == 200) {
+        return true;
+      }
+      return false;
+    })
+    .catch(function (error) {
+      console.log(error);
+      return false;
+    });
+
+  return result;
+}
+
+export async function handleGetOrb() {
+  const result = await api
+    .get(`user/orb`)
+    .then(function (response) {
+      return response.data;
+    })
+    .catch(function (error) {
+      console.log(error);
+      return [];
+    });
+    return result;
+}
+export async function handlePostOrb(data) {
+  const result = await api
+    .post(`user/orb`, data)
+    .then(function (response) {
+      if (response.status == 200) {
         return true;
       }
       return false;
