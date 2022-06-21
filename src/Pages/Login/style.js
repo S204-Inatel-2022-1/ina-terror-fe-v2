@@ -47,7 +47,6 @@ export const Wrapper = styled.div`
   input[type="submit"] {
     color: ${myRed1};
     border: 1px solid ${myRed1};
-    margin-top: 2rem;
   }
 
   button {
